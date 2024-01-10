@@ -26,6 +26,8 @@ def main():
     dist_util.setup_dist()
     logger.configure()
 
+    logger.log(f"args: batch_size {args.batch_size}, num_samples {args.num_samples}")
+
     logger.log("creating model and diffusion...")
     model, diffusion = create_model_and_diffusion(
         **args_to_dict(args, model_and_diffusion_defaults().keys())
